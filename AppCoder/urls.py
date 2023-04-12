@@ -4,6 +4,7 @@ from AppCoder.views import *
 
 urlpatterns = [
     path('agrega-curso/<nombre>/<camada>', curso),
+    path('lista-cursos/', lista_cursos, name="inicio"),    
     path('', inicio, name="inicio"),
     path('curso/', cursos, name="cursos"),
     path('profesores/', profesores, name="profesores"),
