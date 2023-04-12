@@ -42,6 +42,12 @@ def estudiantes(self):
 def entregables(self):
     return render(self, "entregables.html")
 
+def BusquedaCamada(request):
+    return render(request, "BusquedaCamada.html")
+
+def Buscar(request):
+    return HttpResponse("Estoy buscando la camada ", request.GET["camada"])
+
 #formulario hecho con HTML
 
 # def cursoFormulario(request):
