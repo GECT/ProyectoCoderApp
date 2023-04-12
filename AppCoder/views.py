@@ -15,8 +15,16 @@ def lista_cursos(self):
     lista = Curso.objects.all()
     return render(self, "lista_cursos.html", {"lista_cursos": lista})
 
+def cursos(self):
+    lista = Curso.objects.all()    
+    return render(self, "cursos.html",{"lista_cursos": lista})
+
 def lista_profesores(self):
     lista = Profesor.objects.all()
+    return render(self, "profesores.html", {"lista_profesores": lista})
+
+def profesores(self):
+    lista = Profesor.objects.all()  
     return render(self, "profesores.html", {"lista_profesores": lista})
 
 def inicio(self):
@@ -27,13 +35,6 @@ def registroExitoso(self):
 
 def registroMal(self):
     return render(self, "registroMal.html")
-
-def cursos(self):
-    lista = Curso.objects.all()    
-    return render(self, "cursos.html",{"lista_cursos": lista})
-
-def profesores(self):
-    return render(self, "profesores.html")
 
 def estudiantes(self):
     return render(self, "estudiantes.html")
