@@ -9,11 +9,13 @@
         </div>
     </div>
 </div>
-<div>
-    <ul>
-    <li>mauricio cuello</li>
-    <li>leo messi</li>
-    <li>cristiano ronaldo</li>
-    </ul>
+
+    <div style="padding: 8px; border-radius: 4px; border: 1px solid #8f149a; box-sizing: border-box; margin-bottom: 2px; margin-left: 15px; margin-Right: 15px;">
+        <h2>Profesores disponibles</h2>
+        <ul>
+            <li>{{profesor.nombre.apellido.profesion}}</li>
+        {% for profesor in lista_profesores %}
+        {% endfor %}
+        </ul>
 </div>
 {% endblock contenidoQueCambia %}

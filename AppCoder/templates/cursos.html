@@ -9,11 +9,13 @@
         </div>
     </div>
 </div>
-<div>
-    <ul>
-    <li>Curso de python</li>
-    <li>Curso de java</li>
-    <li>Curso de react</li>
-    </ul>
+
+    <div style="padding: 8px; border-radius: 4px; border: 1px solid #8f149a; box-sizing: border-box; margin-bottom: 2px; margin-left: 15px; ">
+        <h2>Cursos disponibles</h2>
+        <ul>
+        {% for curso in lista_cursos %}
+        <li>{{curso.nombre}}</li>
+        {% endfor %}
+        </ul>
 </div>
 {% endblock contenidoQueCambia %}
