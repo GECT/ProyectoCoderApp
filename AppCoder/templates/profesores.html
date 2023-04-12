@@ -1,12 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>profesores</title>
-</head>
-<body style="background-color:azure">
-    <h1>Vista de profesores</h1>
-</body>
-</html>
+{% extends 'BASE.html' %}
+{% load static %}
+{% block contenidoQueCambia %}
+
+<div style="background: #6f42c1;">
+    <div class="text-center text-white">
+        <div style="font-family: ubuntu-bold;">
+            <h2 class="mb-5">Vista de profesores</h2>
+        </div>
+    </div>
+</div>
+<div>
+    <ul>
+    <li>mauricio cuello</li>
+    <li>leo messi</li>
+    <li>cristiano ronaldo</li>
+    </ul>
+</div>
+{% endblock contenidoQueCambia %}

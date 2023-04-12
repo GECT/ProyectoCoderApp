@@ -1,4 +1,5 @@
 .mi-button{
-    padding-right: 50px;
+    padding-right: 250px; margin-left: 30px;
     font-family: 'Ubuntu', sans-serif;
+    --bs-purple: #6f42c1;
 }
