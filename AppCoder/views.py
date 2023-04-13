@@ -109,15 +109,15 @@ def estudiantesFormulario(request):
     print("method: ", request.method)
     print("POST: ", request.POST)
     if request.method == "POST":
-        miformulario3 = EstudiantesFormulario(request.POST)
-        print(miformulario3)
-        if miformulario3.is_valid():
-            data = miformulario3.cleaned_data
-            estudiante = Estudiantes(nombre=data["nombre"], apellido=data["apellido"], email=data["email"])
+        formularioE = EstudiantesFormulario(request.POST)
+        print(formularioE)
+        if formularioE.is_valid():
+            data = formularioE.cleaned_data
+            estudiante = Estudiantes(nombre=data["nombre"], apellido=data["apellido"])
             estudiante.save()
             return render(request, "registrado.html")
         else:
             return render(request, "registroMal.html")
     else:
-        miformulario3 = EstudiantesFormulario()        
-        return render(request, "estudiantesFormulario.html",{"miformulario3": miformulario3})
+        formularioE = EstudiantesFormulario()        
+        return render(request, "estudiantesFormulario.html",{"formularioE": formularioE})
