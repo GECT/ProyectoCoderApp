@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from .models import Curso, Profesor
+from .models import Curso, Profesor, Estudiantes
 from django.http import HttpResponse
-from .forms import CursoFormulario, ProfesorFormulario 
+from .forms import CursoFormulario, ProfesorFormulario, EstudiantesFormulario
 # Create your views here.
 
 def curso(self, nombre, camada):
@@ -27,6 +27,14 @@ def profesores(self):
     lista = Profesor.objects.all()  
     return render(self, "profesores.html", {"lista_profesores": lista})
 
+def lista_estudiantes(self):
+    lista = Profesor.objects.all()
+    return render(self, "estudiantes.html", {"lista_estudiantes": lista})
+
+def estudiantes(self):
+    lista = Estudiantes.objects.all()
+    return render(self, "estudiantes.html", {"lista_estudiantes": lista})
+
 def inicio(self):
     return render(self, "inicio.html")
 
@@ -36,9 +44,6 @@ def registroExitoso(self):
 def registroMal(self):
     return render(self, "registroMal.html")
 
-def estudiantes(self):
-    return render(self, "estudiantes.html")
-
 def entregables(self):
     return render(self, "entregables.html")
 
@@ -46,7 +51,12 @@ def BusquedaCamada(request):
     return render(request, "BusquedaCamada.html")
 
 def Buscar(request):
-    return HttpResponse("Estoy buscando la camada ", request.GET["camada"])
+    if request.GET["camada"]:
+        camada = request.GET["camada"]
+        cursos = Curso.objects.filter(camada=camada)
+        return render(request, "resultadosBusqueda.html", {"cursos": cursos, "camada": camada})
+    else:
+        return HttpResponse(f"No enviaste info")
 
 #formulario hecho con HTML
 
@@ -94,3 +104,20 @@ def profesoresFormulario(request):
     else:
         miformulario2 = ProfesorFormulario()        
         return render(request, "profesoresFormulario.html",{"miFormulario2": miformulario2})
+    
+def estudiantesFormulario(request):
+    print("method: ", request.method)
+    print("POST: ", request.POST)
+    if request.method == "POST":
+        miformulario3 = EstudiantesFormulario(request.POST)
+        print(miformulario3)
+        if miformulario3.is_valid():
+            data = miformulario3.cleaned_data
+            estudiantes = Estudiantes(nombre=data["nombre"], apellido=data["apellido"], email=data["email"])
+            estudiantes.save()
+            return render(request, "registrado.html")
+        else:
+            return render(request, "registroMal.html")
+    else:
+        miformulario3 = EstudiantesFormulario()        
+        return render(request, "estudiantesFormulario.html",{"miformulario3": miformulario3})

@@ -1,0 +1,25 @@
+{% extends 'BASE.html' %} {% load static %} {% block contenidoQueCambia %}
+
+<div style="background: #6f42c1">
+  <div class="text-center text-white">
+    <div style="font-family: ubuntu-bold">
+      <h2 class="mb-5">Busqueda Camada:</h2>
+    </div>
+  </div>
+</div>
+<div class="text-center">
+  <p style="padding: 8px; border-radius: 4px; border: 2px solid #8f149a; box-sizing: border-box; margin-bottom: 2px; margin-left: 500px; margin-Right: 500px;">Estamos bucando los cursos con la camada {{camada}}</p>
+
+  {% if cursos %}
+   <ul>
+    {% for curso in cursos %}
+    <li>
+        <h5>{{curso.nombre}} - {{curso.camada}}</h5>
+    </li>
+    {% endfor %}
+   </ul>
+   {% else %}
+    <h5 class="text-center">No se encontro ningun curso</h5>
+  {% endif %}  
+</div>
+{% endblock contenidoQueCambia %}
