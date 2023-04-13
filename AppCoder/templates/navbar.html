@@ -2,22 +2,22 @@
 <nav class="navbar navbar-light bg-light static-top">
   <div class="container" style="font-family: ubuntu-bold;">
 
-    <a class="navbar-brand" href="{% url 'inicio' %}">Inicio</a>
-    
-    <a class="navbar-brand" href="{% url 'cursoFormulario' %}">Registro cursos</a>
+    <a class="btn btn-second" href="{% url 'inicio' %}">Inicio</a>
     
     <a class="navbar-brand" href="{% url 'cursos' %}">Cursos</a>
     
-    <a class="navbar-brand" href="{% url 'profesoresFormulario' %}">Registro profesores</a>
-    
     <a class="navbar-brand" href="{% url 'profesores' %}">Profesores</a>
-
-    <a class="navbar-brand" href="{% url 'estudiantesFormulario' %}">Registro estudiantes</a>
     
     <a class="navbar-brand" href="{% url 'estudiantes' %}">Estudiantes</a>
-
+    
     <a class="navbar-brand" href="{% url 'entregables' %}">Entregables</a>
     
-    <a class="btn btn-primary" href="#signup">Iniciar</a>
+    <a class="btn btn-tercero" href="{% url 'cursoFormulario' %}">Registro cursos</a>
+
+    <a class="btn btn-tercero" href="{% url 'profesoresFormulario' %}">Registro profesores</a>
+
+    <a class="btn btn-tercero" href="{% url 'estudiantesFormulario' %}">Registro estudiantes</a>
+    
+    <a class="btn btn-second" href="#signup">Iniciar</a>
   </div>
 </nav>
