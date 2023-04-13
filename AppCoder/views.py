@@ -28,7 +28,7 @@ def profesores(self):
     return render(self, "profesores.html", {"lista_profesores": lista})
 
 def lista_estudiantes(self):
-    lista = Profesor.objects.all()
+    lista = Estudiantes.objects.all()
     return render(self, "estudiantes.html", {"lista_estudiantes": lista})
 
 def estudiantes(self):
@@ -113,8 +113,8 @@ def estudiantesFormulario(request):
         print(miformulario3)
         if miformulario3.is_valid():
             data = miformulario3.cleaned_data
-            estudiantes = Estudiantes(nombre=data["nombre"], apellido=data["apellido"], email=data["email"])
-            estudiantes.save()
+            estudiante = Estudiantes(nombre=data["nombre"], apellido=data["apellido"], email=data["email"])
+            estudiante.save()
             return render(request, "registrado.html")
         else:
             return render(request, "registroMal.html")

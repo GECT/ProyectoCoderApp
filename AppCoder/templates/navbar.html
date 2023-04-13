@@ -1,16 +1,23 @@
 <!-- Navigation-->
 <nav class="navbar navbar-light bg-light static-top">
-  <div class="container">
-    <div class="mi-button">
-      <a class="navbar-brand" href="{% url 'inicio' %}">Inicio</a>
-    </div>
+  <div class="container" style="font-family: ubuntu-bold;">
+
+    <a class="navbar-brand" href="{% url 'inicio' %}">Inicio</a>
+    
     <a class="navbar-brand" href="{% url 'cursoFormulario' %}">Registro cursos</a>
+    
     <a class="navbar-brand" href="{% url 'cursos' %}">Cursos</a>
-    <a class="navbar-brand" href="{% url 'profesores' %}">Profesores</a>
+    
     <a class="navbar-brand" href="{% url 'profesoresFormulario' %}">Registro profesores</a>
-    <a class="navbar-brand" href="{% url 'estudiantes' %}">Estudiantes</a>
+    
+    <a class="navbar-brand" href="{% url 'profesores' %}">Profesores</a>
+
     <a class="navbar-brand" href="{% url 'estudiantesFormulario' %}">Registro estudiantes</a>
+    
+    <a class="navbar-brand" href="{% url 'estudiantes' %}">Estudiantes</a>
+
     <a class="navbar-brand" href="{% url 'entregables' %}">Entregables</a>
+    
     <a class="btn btn-primary" href="#signup">Iniciar</a>
   </div>
 </nav>
